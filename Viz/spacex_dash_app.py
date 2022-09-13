@@ -58,8 +58,8 @@ def get_pie_chart(entered_site):
         title='Launch Success')
         return fig
     else:
-        success_count = sum(filtered_df['class'] == 0)
-        failure_count = sum(filtered_df['class'] == 1)
+        success_count = sum(filtered_df['class'] == 1)
+        failure_count = sum(filtered_df['class'] == 0)
         fig2 = px.pie(filtered_df, values=[success_count,failure_count],
         names=['success','failure'] , 
         title='Launch Success')
@@ -88,7 +88,7 @@ def get_scatter_chart(entered_site,payload):
         fig2 = px.scatter(filtered_df2, x='Payload Mass (kg)',y='class', 
         title='Launch Success')
         return fig2
-        
+
 # Run the app
 if __name__ == '__main__':
     app.run_server()
